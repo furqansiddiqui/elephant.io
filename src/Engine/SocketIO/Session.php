@@ -43,6 +43,10 @@ class Session
     }
 
     /** The property should not be modified, hence the private accessibility on them */
+    /**
+     * @param $prop
+     * @return mixed
+     */
     public function __get($prop)
     {
         static $list = ['id', 'upgrades'];

@@ -11,11 +11,8 @@
 
 namespace ElephantIO\Engine\SocketIO;
 
-use DomainException;
 use InvalidArgumentException;
 use UnexpectedValueException;
-
-use Psr\Log\LoggerInterface;
 
 use ElephantIO\EngineInterface;
 use ElephantIO\Payload\Encoder;

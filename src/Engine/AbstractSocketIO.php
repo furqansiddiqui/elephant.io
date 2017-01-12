@@ -14,8 +14,6 @@ namespace ElephantIO\Engine;
 use DomainException;
 use RuntimeException;
 
-use Psr\Log\LoggerInterface;
-
 use ElephantIO\EngineInterface;
 use ElephantIO\Payload\Decoder;
 use ElephantIO\Exception\UnsupportedActionException;
@@ -101,9 +99,9 @@ abstract class AbstractSocketIO implements EngineInterface
 
     /**
      * {@inheritDoc}
-     *
      * Be careful, this method may hang your script, as we're not in a non
      * blocking mode.
+     * @return void|string;
      */
     public function read()
     {
@@ -189,7 +187,7 @@ abstract class AbstractSocketIO implements EngineInterface
 
     /**
      * Parse an url into parts we may expect
-     *
+     * @param $url
      * @return string[] information on the given URL
      */
     protected function parseUrl($url)

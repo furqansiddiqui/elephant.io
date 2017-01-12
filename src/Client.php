@@ -11,8 +11,8 @@
 
 namespace ElephantIO;
 
-use Psr\Log\NullLogger;
-use Psr\Log\LoggerInterface;
+use ElephantIO\Psr\Log\NullLogger;
+use ElephantIO\Psr\Log\LoggerInterface;
 
 use ElephantIO\Exception\SocketException;
 
@@ -77,8 +77,6 @@ class Client
 
     /**
      * Reads a message from the socket
-     *
-     * @return MessageInterface Message read from the socket
      */
     public function read()
     {
@@ -88,7 +86,8 @@ class Client
 
     /**
      * Emits a message through the engine
-     *
+     * @param $event
+     * @param array $args
      * @return $this
      */
     public function emit($event, array $args)
@@ -102,7 +101,7 @@ class Client
     /**
      * Sets the namespace for the next messages
      *
-     * @param string namespace the name of the namespace
+     * @param string $namespace the name of the namespace
      * @return $this
      */
     public function of($namespace)
